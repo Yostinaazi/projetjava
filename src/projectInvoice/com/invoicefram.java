@@ -615,19 +615,18 @@ String filePath = "E:\\main.txt";
             // loop to read from file to invoice Main
             while((row=Mainbr.readLine())!=null)
             {
-                System.out.print("jiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
                 String[] MainInvParts=row.split(",");
                 String Invnumstr=MainInvParts[0];
                 String Invdatestr=MainInvParts[1];
                 String Invcustomername=MainInvParts[2];
                 int Invnumer=Integer.parseInt(Invnumstr);
                 Date invdate=date1.parse(Invdatestr);
-           //  System.out.println("Date is     :"+invdate);
                InvoiceMain inv=new InvoiceMain(Invnumer,Invcustomername,invdate); 
+               System.out.println("Invoice number    :"+Invnumer+"    Invoce customername    :"+Invcustomername+"    invoice vdate       :"+invdate);
+               System.out.println("_______________________________________________________________________________________________________");
                ListOfMains.add(inv);
             } 
-            System.out.println("Afterloop size of mains    "+ListOfMains.size());
-            //loops for Invoice detail
+       //     System.out.println("Afterloop size of mains    "+ListOfMains.size());
             BufferedReader Detailbr = new BufferedReader(new FileReader(file1));
             String rowdetail=null;
             while((rowdetail=Detailbr.readLine())!=null)
@@ -640,9 +639,9 @@ String filePath = "E:\\main.txt";
            int invmain= Integer.parseInt(invnumbstr);
            double itemprice= Double.parseDouble(itempricestr); 
            int itemcount= Integer.parseInt(itemcountstr);
-           System.out.println("invmain"+invmain+"itemprice"+itemprice+"itemcount"+itemcount);
+           System.out.println("invoice number    :"+invmain+"   item price   :"+itemprice+"     item count     :"+itemcount);
            InvoiceMain main=findmaininvoive(invmain);
-           System.out.println("the maiiiiiiiiiiiiin"+main.getInvnumber());
+          // System.out.println("the maiiiiiiiiiiiiin"+main.getInvnumber());
            InvoiceDetail itemsofmain=new InvoiceDetail(itemname,itemprice,itemcount,main);
            main.getLines().add(itemsofmain);
           }
