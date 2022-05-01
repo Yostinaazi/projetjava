@@ -564,10 +564,10 @@ private InvoiceMaintableModel InvoiceMaintableshow;
 private List<InvoiceMain> ListOfMains=new ArrayList<>();
 private List<InvoiceDetail> itemsofmain=new ArrayList<>();
 private InvoicedetailtableModel Invoicedetailtableshow;
-String filePath = "E:\\main.txt";
-//String filePath = "E:\\main.csv";
+//String filePath = "E:\\main.txt";
+String filePath = "E:\\main1.csv";
          File file = new File(filePath);
-         String filePath1 = "E:\\items.txt";
+         String filePath1 = "E:\\item1.csv";
          File file1 = new File(filePath1);
 
 
@@ -615,6 +615,7 @@ String filePath = "E:\\main.txt";
             // loop to read from file to invoice Main
             while((row=Mainbr.readLine())!=null)
             {
+               // String[] MainInvParts=row.split(",");
                 String[] MainInvParts=row.split(",");
                 String Invnumstr=MainInvParts[0];
                 String Invdatestr=MainInvParts[1];
